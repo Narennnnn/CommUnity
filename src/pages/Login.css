@@ -1,0 +1,56 @@
+/* Login.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.login-button {
+    background-color: #61dafb;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Center the signInClass div on the page */
+.signInClass {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.signInClass p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.signInClass button {
+    background-color: #61dafb;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.signInClass button:hover {
+    background-color: #43b2db;
+}

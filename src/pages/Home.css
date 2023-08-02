@@ -1,0 +1,19 @@
+.home-container {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+.home-links {
+    margin-top: 20px;
+}
+
+.home-links a {
+    color: rgb(73, 64, 64);
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.home-links a:hover {
+    color: #61dafb;
+}
