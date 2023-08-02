@@ -1,20 +1,24 @@
 import './App.css';
 import { Main } from './pages/Main';
 import { Login } from './pages/Login';
-import React from 'react';
+import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 function App() {
+    const [showLogin, setShowLogin] = useState(false);
+
     return (
         <div className="App">
             <Router>
-                <Navbar />
+                <Navbar setShowLogin={setShowLogin} /> {/* Pass setShowLogin to Navbar */}
+                {showLogin && <Login setShowLogin={setShowLogin} />} {/* Render the Login component based on showLogin state */}
                 <Routes>
                     <Route path="/" element={<Main />} />
-                    <Route path="/login" element={<Login />} />
                 </Routes>
             </Router>
         </div>
-    )
+    );
 }
+
 export default App;

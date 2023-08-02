@@ -1,5 +1,6 @@
 /* Login.css */
 .container {
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,33 +8,17 @@
     height: 100vh;
 }
 
-.title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.description {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-.login-button {
-    background-color: #61dafb;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-/* Center the signInClass div on the page */
 .signInClass {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 50vh;
+    width: 25vw;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    padding: 20px;
 }
 
 .signInClass p {
@@ -41,16 +26,68 @@
     margin-bottom: 1rem;
 }
 
+.signInClass input {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    width: 100%;
+    background-color: white;
+    /* Set the background color to white */
+}
+
+.buttonGroup {
+    display: flex;
+    flex-direction: column;
+    /* Change to column to stack the buttons vertically */
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
 .signInClass button {
-    background-color: #61dafb;
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 1rem;
 }
 
-.signInClass button:hover {
-    background-color: #43b2db;
+.signInClass button.signIn {
+    background-color: #002E2C;
+    /* Light blue color */
+}
+
+.signInClass button.signUp {
+    background-color: #002E2C;
+    /* Orange color */
+}
+
+.signInClass button.signInGoogle {
+    background-color: #002E2C;
+    /* Light blue color */
+    border-radius: 10px;
+}
+
+.orSeparator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.orSeparator::before,
+.orSeparator::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid black;
+}
+
+.orSeparator::before {
+    margin-right: 10px;
+}
+
+.orSeparator::after {
+    margin-left: 10px;
 }

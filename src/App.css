@@ -29,8 +29,3 @@ button {
   padding: 5px 10px;
   border-radius: 5px;
 }
-
-button:hover {
-  background-color: #61dafb;
-  color: white;
-}
