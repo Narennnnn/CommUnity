@@ -15,12 +15,12 @@ export const Navbar: React.FC = () => {
         <nav className={`navbar${isLoginPage ? ' login-navbar' : ''}`}>
             <div>
                 <Link to="/">Home</Link>
-                <Link to="/login">Login</Link>
+                {!user ? <Link to="/login">Login</Link> : <Link to='/createpost'>Create Post</Link>}
             </div>
             <div className="user-info">
                 {user && (
                     <>
-                        {user?.displayName && <p>Hello, {user.displayName}</p>}
+                        {user?.displayName && <p>{user.displayName}</p>}
                         {user ? <button onClick={handleSignOut}>Sign Out</button> : null}
                     </>
                 )}

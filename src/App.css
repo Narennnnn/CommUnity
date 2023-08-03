@@ -29,3 +29,7 @@ button {
   padding: 5px 10px;
   border-radius: 5px;
 }
+
+.create-post {
+  background-color: #323030;
+}
