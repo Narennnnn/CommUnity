@@ -64,6 +64,10 @@
     /* Orange color */
 }
 
+.signInClass button.reset {
+    background-color: #002E2C;
+}
+
 .signInClass button.signInGoogle {
     background-color: #002E2C;
     /* Light blue color */

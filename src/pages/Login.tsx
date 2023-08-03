@@ -4,20 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { useState, useEffect } from 'react';
-import { LoginProps } from './LoginProps'; // Import the LoginProps interface
 
-export const Login: React.FC<LoginProps> = ({ setShowLogin }) => {
+export const Login: React.FC = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-
-    // Use useEffect to reset the input values and error message when the component mounts or the user switches between login and signup
-    useEffect(() => {
-        setEmail('');
-        setPassword('');
-        setError('');
-    }, []);
+    const [shouldResetForm, setShouldResetForm] = useState(true); // Set initial value to true
 
     const handleEmailAndPasswordLogin = async () => {
         try {
@@ -40,8 +33,7 @@ export const Login: React.FC<LoginProps> = ({ setShowLogin }) => {
 
     const signInwithGoogle = async () => {
         try {
-            const result = await signInWithPopup(auth, provider);
-            // console.log(result)
+            await signInWithPopup(auth, provider);
             navigate('/'); // Redirect to Home Page after successful login with Google
         } catch (error: any) {
             if (error === "auth/popup-closed-by-user") {
@@ -51,7 +43,24 @@ export const Login: React.FC<LoginProps> = ({ setShowLogin }) => {
                 setError('Error signing in');
             }
         }
-    }
+    };
+
+    // Use useEffect to reset the form when the component mounts or when the user navigates away
+    useEffect(() => {
+        if (shouldResetForm) {
+            setEmail('');
+            setPassword('');
+            setError('');
+            setShouldResetForm(false); // Set shouldResetForm to false after resetting the form
+        }
+    }, [shouldResetForm]);
+
+    // Use useEffect to set shouldResetForm to true when the component unmounts (user navigates away)
+    useEffect(() => {
+        return () => {
+            setShouldResetForm(true);
+        };
+    }, []);
 
     return (
         <div className='container'>
@@ -61,14 +70,13 @@ export const Login: React.FC<LoginProps> = ({ setShowLogin }) => {
                 <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <div className="buttonGroup">
-                    <button className="signIn" onClick={handleEmailAndPasswordLogin}>Sign in</button>
-                    <button className="signUp" onClick={handleEmailAndPasswordSignUp}>Create new account</button>
+                    <button className="signIn" onClick={() => { handleEmailAndPasswordLogin(); }}>Sign in</button>
+                    <button className="signUp" onClick={() => { handleEmailAndPasswordSignUp(); }}>Create new account</button>
                 </div>
                 <div className="orSeparator">
                     <div>Or</div>
                 </div>
-                <button className='signInGoogle' onClick={signInwithGoogle}>Sign in with Google</button>
-                <button className='closeButton' onClick={() => setShowLogin(false)}>Close</button>
+                <button className='signInGoogle' onClick={() => { signInwithGoogle(); }}>Sign in with Google</button>
             </div>
         </div>
     );

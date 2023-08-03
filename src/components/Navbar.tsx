@@ -1,25 +1,21 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { auth } from '../config/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { signOut } from 'firebase/auth';
-import { useState } from 'react'; // Import useState
 
-import { NavbarProps } from './NavbarProps'; // Import the NavbarProps interface
-import { Login } from '../pages/Login'; // Import the Login component
-
-export const Navbar: React.FC<NavbarProps> = ({ setShowLogin }) => {
-    const [user, loading, error] = useAuthState(auth);
+export const Navbar: React.FC = () => {
+    const location = useLocation(); // Get the current location using useLocation hook
+    const isLoginPage = location.pathname === '/login'; // Check if it's the login page
+    const [user] = useAuthState(auth);
 
     const handleSignOut = async () => {
-        await signOut(auth);
-        setShowLogin(false); // Close the login component when signing out
+        await auth.signOut();
     };
 
     return (
-        <nav className="navbar">
+        <nav className={`navbar${isLoginPage ? ' login-navbar' : ''}`}>
             <div>
                 <Link to="/">Home</Link>
-                <button onClick={() => setShowLogin(true)}>Login</button>
+                <Link to="/login">Login</Link>
             </div>
             <div className="user-info">
                 {user && (
@@ -29,7 +25,6 @@ export const Navbar: React.FC<NavbarProps> = ({ setShowLogin }) => {
                     </>
                 )}
             </div>
-            {/* No need to render Login component here */}
         </nav>
     );
 };
