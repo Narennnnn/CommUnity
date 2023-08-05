@@ -30,6 +30,74 @@ button {
   border-radius: 5px;
 }
 
-.create-post {
-  background-color: #323030;
+.create-post-page {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+
+.create-form-container {
+  width: 400px;
+  background-color: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-form-group {
+  margin-bottom: 20px;
+}
+
+
+.create-form-input {
+  width: 100%;
+  padding: 10px;
+  background-color: #f8f8f8;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.create-form-textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: #f8f8f8;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  /* Update the height property */
+  height: 100%;
+  overflow: auto;
+  /* Add the following to enable vertical resizing */
+  resize: vertical;
+}
+
+.create-form-error {
+  color: red;
+}
+
+.create-form-submit-container {
+  display: flex;
+  justify-content: center;
+}
+
+.create-form-submit-button {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-form-submit-button:hover {
+  background-color: #333;
 }

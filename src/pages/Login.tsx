@@ -65,7 +65,7 @@ export const Login: React.FC = () => {
     return (
         <div className='container'>
             <div className='signInClass'>
-                <h1>Welcome Back</h1>
+                <h1>Welcome Back!</h1>
                 {error && <div className="error">{error}</div>}
                 <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
