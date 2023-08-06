@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #323030;
+  background-color: #272829;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -9,6 +9,7 @@
 .navbar a {
   color: white;
   margin-right: 20px;
+  margin-top: 10px;
   text-decoration: none;
 }
 
@@ -23,25 +24,27 @@
 
 button {
   cursor: pointer;
-  border: 1px solid #61dafb;
+  border: 1px solid #fff;
   background: transparent;
-  color: #61dafb;
+  color: #fff;
   padding: 5px 10px;
   border-radius: 5px;
 }
 
 .create-post-page {
-  background-color: #000;
+  background-color: #ECF9FF;
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-
+  min-height: 100vh;
+  /* Use min-height to fill the viewport height */
 }
 
 .create-form-container {
-  width: 400px;
+  width: 500px;
+  width: 90%;
+  max-width: 500px;
   background-color: #fff;
   color: #000;
   padding: 20px;
@@ -90,7 +93,7 @@ button {
 
 .create-form-submit-button {
   padding: 10px 20px;
-  background-color: #000;
+  background-color: #D2E9E9;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -99,5 +102,63 @@ button {
 }
 
 .create-form-submit-button:hover {
-  background-color: #333;
+  background-color: #C4DFDF;
+}
+
+.post-container {
+  width: 400px;
+  width: 90%;
+  max-width: 400px;
+  background-color: #f8f8f8;
+  color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title */
+.title {
+  font-size: 12px;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Description */
+.description {
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+}
+
+.like-count {
+  margin-left: 5px;
+  /* Add some space between the icon and count */
+}
+
+/* App.css */
+
+@media screen and (max-width: 768px) {
+  .create-form-container {
+    width: 90%;
+  }
+
+  .post-container {
+    width: 90%;
+  }
 }

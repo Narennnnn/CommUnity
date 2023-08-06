@@ -1,12 +1,21 @@
 .home-container {
-    background-color: #f0f0f0;
+    background-color: #ECF9FF;
     padding: 20px;
     text-align: center;
+}
+
+/* Assuming your homepage CSS file is named home.css */
+body {
+    background-color: #ECF9FF;
+    /* Replace with your desired background color */
 }
 
 .home-links {
     margin-top: 20px;
     transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    /* Center the links horizontally */
 }
 
 .home-links a {
