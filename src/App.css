@@ -1,4 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Pacifico&display=swap');
+
+
+body{
+  font-family: 'Manrope', sans-serif;
+
+}
 .navbar {
+
   background-color: #272829;
   color: white;
   display: flex;
@@ -117,6 +125,9 @@ button {
   margin: 20px auto;
   display: flex;
   flex-direction: column;
+  font-family: 'Manrope', sans-serif;
+  
+
 }
 
 /* Title */
@@ -124,15 +135,17 @@ button {
   font-size: 12px;
   font-weight: bolder;
   text-align: center;
+  font-family: 'Manrope', sans-serif;
   margin-bottom: 10px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
 }
 
 /* Description */
 .description {
+  font-family: 'Manrope', sans-serif;
   font-size: 16px;
   margin-bottom: 20px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
 
 .footer {
@@ -159,6 +172,6 @@ button {
   }
 
   .post-container {
-    width: 90%;
+    width: 70%;
   }
 }
